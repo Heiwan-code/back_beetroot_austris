@@ -8,7 +8,9 @@ export const ItemFactory = Factory.define(Item, async ({ faker }) => {
   // getCount() implemented as custom extension to
   // DatabaseQueryBuilder in providers/AppProvider.ts based on
   // https://docs.adonisjs.com/guides/database/query-builder#extending-query-builders
+  // @ts-ignore
   const itemTypeCount = await Database.from('item_types').getCount()
+  // @ts-ignore
   const rarityCount = await Database.from('rarities').getCount()
   return {
     name: faker.lorem.word(8),
